@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terimakasih Ms</title>
+  <style>
+    body{
+      margin:0;
+      font-family: "Inter", Arial, sans-serif;
+      background: linear-gradient(135deg, #4caf50, #2e7d32);
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      color:white;
+    }
+
+    .card{
+      width:100%;
+      max-width:680px;
+      background: rgba(255,255,255,0.12);
+      padding:30px;
+      border-radius:18px;
+      backdrop-filter: blur(6px);
+      box-shadow:0 8px 25px rgba(0,0,0,0.3);
+      text-align:center;
+    }
+
+    /* --- Envelope Animation --- */
+    .envelope-box{
+      width:160px;
+      margin:0 auto 20px;
+      animation: shake 0.5s ease-in-out 0s 2;
+    }
+
+    @keyframes shake{
+      0%{transform: translateX(0)}
+      25%{transform: translateX(-6px)}
+      50%{transform: translateX(6px)}
+      75%{transform: translateX(-6px)}
+      100%{transform: translateX(0)}
+    }
+
+    .envelope{
+      position:relative;
+      width:160px;
+      height:110px;
+      cursor:pointer;
+      transition:0.5s;
+    }
+
+    .back{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:#a5d6a7;
+      border-radius:10px;
+      z-index:1;
+    }
+
+    .front{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:#c8e6c9;
+      clip-path:polygon(0 0, 100% 0, 50% 60%);
+      transform-origin:top;
+      transition:0.6s;
+      z-index:3;
+    }
+
+    .letter{
+      position:absolute;
+      width:85%;
+      left:7.5%;
+      top:60%;
+      height:70px;
+      background:white;
+      border-radius:8px;
+      opacity:0;
+      transform:translateY(20px);
+      transition:0.6s;
+      z-index:2;
+      padding:10px;
+      color:#333;
+      font-size:14px;
+      line-height:1.4;
+    }
+
+    .envelope.open .front{
+      transform: rotateX(160deg);
+    }
+    .envelope.open .letter{
+      opacity:1;
+      transform:translateY(-40px);
+    }
+
+
+    h1{
+      margin-top:5px;
+    }
+
+    div.longtext{
+      width:100%;
+      height:180px;
+      resize:none;
+      border-radius:12px;
+      border:none;
+      padding:15px;
+      font-size:16px;
+      outline:none;
+    }
+
+    .actions{
+      margin-top:20px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+    }
+
+    .btn{
+      padding:12px 20px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      background:white;
+      color:#2e7d32;
+      border:none;
+      transition:0.2s;
+      text-decoration:none;
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    .back-btn{
+      background:transparent;
+      border:2px solid rgba(255,255,255,0.6);
+      color:white;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="envelope-box" onclick="openEnvelope()">
+      <div class="envelope" id="env">
+        <div class="back"></div>
+        <div class="front"></div>
+        <div class="letter">terimakasih ms vika</div>
+      </div>
+    </div>
+
+    <h1>happy teachers day's ms vika</h1>
+
+    <div class="longtext">
+      Selamat Hari Guru 2025 untuk ms. Terima kasih karena telah menjadi pendamping saya dalam suka dan duka selama satu tahun penuh.Tank you ms selalu hadir untuk mendengarkan keluhan saya dengan sabar, bahkan ketika kami tidak tahu bagaimana menjelaskan perasaan sendiri. Stiap perhatian kecil yang diberikan membuat kami merasa lebih kuat dan berani.terimakasih ms telah menjadi FT saya di sec 4 initerimakasih ms telah menemani & membimbing saya selama disekolah dan malaysia dan mendapat juara, saya ingin meminta maaf jika ada salah dan perbuatan yang menyinggung ms. Semoga ms, selalu diberikan kesehatan dan kebahagiaan.
+    </div>
+
+<script>
+function openEnvelope(){
+  document.getElementById("env").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

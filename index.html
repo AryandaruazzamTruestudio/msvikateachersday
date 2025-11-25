@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>happy teachers day ms</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Inter,Arial;
+      background:linear-gradient(135deg,#2e7d32,#145017);
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      color:white;
+    }
+    .card{
+      width:100%;
+      max-width:720px;
+      background:rgba(255,255,255,0.12);
+      padding:30px;
+      border-radius:18px;
+      text-align:center;
+      backdrop-filter:blur(6px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* --- Amplop --- */
+    .envelope-box{
+      width:180px;
+      margin:auto;
+      cursor:pointer;
+    }
+    .envelope{
+      position:relative;
+      width:180px;
+      height:120px;
+      margin:auto;
+      transition:0.5s ease;
+    }
+    .envelope .back{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:#a5d6a7;
+      border-radius:10px;
+      z-index:1;
+    }
+    .envelope .front{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:#c8e6c9;
+      clip-path:polygon(0 0,100% 0,50% 60%);
+      transform-origin:top;
+      transition:0.6s;
+      z-index:3;
+    }
+    .envelope.open .front{
+      transform:rotateX(160deg);
+    }
+
+    .letter{
+      position:absolute;
+      width:85%;
+      left:7.5%;
+      top:60%;
+      height:70px;
+      background:white;
+      border-radius:8px;
+      opacity:0;
+      transform:translateY(20px);
+      transition:0.6s;
+      z-index:2;
+      padding:10px;
+      color:#333;
+      font-size:14px;
+      line-height:1.4;
+    }
+    .envelope.open .letter{
+      opacity:1;
+      transform:translateY(-40px);
+    }
+
+    h1{margin-top:30px;font-size:28px;}
+
+    .message{
+      background:rgba(255,255,255,0.15);
+      padding:16px;
+      border-radius:14px;
+      margin-top:20px;
+      font-size:16px;
+    }
+
+    .actions{
+      margin-top:25px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:12px 20px;
+      background:white;
+      color:#1b5e20;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.2s;
+    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,0.25);}  
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="envelope-box" onclick="openEnvelope()">
+      <div class="envelope" id="env">
+        <div class="back"></div>
+        <div class="front"></div>
+        <div class="letter">Selamat Hari ms Vika! Terima kasih atas ilmu yang telah di berikan</div>
+      </div>
+    </div>
+
+    <h1>untuk ms vika</h1>
+    <div class="message">
+      Terima kasih atas semua ilmu, perhatian, dan bimbingan yang telah diberikan.
+    </div>
+
+    <div class="actions">
+      <a class="btn" href="pesan.html">di Sklik ms</a>
+    </div>
+
+  </div>
+
+<script>
+function openEnvelope(){
+  document.getElementById("env").classList.toggle("open");
+}
+</script>
+</body>
+</html>
+
